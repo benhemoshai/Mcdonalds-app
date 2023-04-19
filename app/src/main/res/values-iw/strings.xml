@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">האפליקציה הראשונה שלי</string>
+    <string name="welcome">ברוכים הבאים למקדונלדס!</string>
+    <string name="menu_button">תפריט</string>
+    <string name="reserve_button">הזמנת מקום</string>
+    <string name="checkourmenu">תראו את התפריט החדש שלנו!</string>
+</resources>

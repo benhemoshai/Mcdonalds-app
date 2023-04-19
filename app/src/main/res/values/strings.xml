@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My First Application</string>
+    <string name="welcome">Welcome To McDonalds!</string>
+    <string name="menu_button">Menu</string>
+    <string name="reserve_button">Reserve Seats</string>
+    <string name="checkourmenu">Check out our new menu!</string>
+</resources>

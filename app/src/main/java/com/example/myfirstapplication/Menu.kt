@@ -12,6 +12,8 @@ private lateinit var mcfries: ImageButton
 private lateinit var coke: ImageButton
 private lateinit var icecream: ImageButton
 private lateinit var water: ImageButton
+private lateinit var mcnuggets: ImageButton
+
 
 class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,7 @@ class Menu : AppCompatActivity() {
         mcCoke()
         mcIceCream()
         mcWater()
+        mcNuggets()
     }
 
     private fun bigMac() {
@@ -101,7 +104,21 @@ class Menu : AppCompatActivity() {
             }
             builder.show()
         }
+    }
+        private fun mcNuggets() {
+            //when the user clicks on the McNuggets image
+            mcnuggets = findViewById(R.id.nuggets)
+            mcnuggets.setOnClickListener {
+                var builder = Dialog(this)
+                builder.requestWindowFeature(Window.FEATURE_NO_TITLE)
+                builder.setContentView(R.layout.nuggets)
+                builder.setCancelable(false)
 
+                builder.findViewById<Button>(R.id.xnuggetsbutton).setOnClickListener {
+                    builder.dismiss()
+                }
+                builder.show()
+            }
+        }
 
     }
-}

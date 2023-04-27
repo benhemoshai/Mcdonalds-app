@@ -19,8 +19,8 @@
 
             <ImageView
                 android:id="@+id/drinkPic"
-                android:layout_width="249dp"
-                android:layout_height="261dp"
+                android:layout_width="210dp"
+                android:layout_height="212dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
@@ -46,12 +46,12 @@
 
             <TextView
                 android:id="@+id/drinkInfo"
-                android:layout_width="309dp"
-                android:layout_height="136dp"
+                android:layout_width="325dp"
+                android:layout_height="146dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/baloo"
-                android:text=" Filled with ice and freshy!\n Price: 3$"
-                android:textSize="18sp"
+                android:text="150 cal\n Price: 3$\n\n Enjoy a cold, refreshing Coca-Cola® soda from McDonald's that complements all your menu favorites."
+                android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/drinkPic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.514"

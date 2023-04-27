@@ -6,11 +6,14 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Phone
 import android.widget.*
 import java.util.*
 
 private lateinit var builder : AlertDialog.Builder
 private lateinit var showDate: TextView
+private lateinit var name : EditText
+private lateinit var phone : EditText
 private var numOfPeople = 0
 
 class ReservationActivity : AppCompatActivity() {
@@ -81,20 +84,22 @@ class ReservationActivity : AppCompatActivity() {
     private fun submit(){
             //payment method radioButtons
             val payment = findViewById<RadioGroup>(R.id.radioGroup)
-            //submitting message with all the reservation details
             val submitButton = findViewById<Button>(R.id.submit)
             builder = AlertDialog.Builder(this)
 
-        ///submit button
             submitButton.setOnClickListener {
 
                 val selectID = payment.checkedRadioButtonId
                 val btn = findViewById<RadioButton>(selectID)
+                name = findViewById(R.id.editName)
+                phone= findViewById(R.id.editTextPhone)
 
                 //checks if the user entered the whole fields before hitting the submit button
-                if (selectID==-1) Toast.makeText(this@ReservationActivity , "Select a payment method",Toast.LENGTH_LONG).show()
+                if  (showDate.text == "")  Toast.makeText(this@ReservationActivity , "Select the date&time",Toast.LENGTH_LONG).show()
+                else if (name.text.toString()== "") Toast.makeText(this@ReservationActivity , "Enter your name",Toast.LENGTH_LONG).show()
+                else if(phone.text.toString().length!=10) Toast.makeText(this@ReservationActivity , "Enter a valid phone number",Toast.LENGTH_LONG).show()
                 else if (numOfPeople==0) Toast.makeText(this@ReservationActivity , "Select the amount of people",Toast.LENGTH_LONG).show()
-                else if (showDate.text == "")  Toast.makeText(this@ReservationActivity , "Select the date&time",Toast.LENGTH_LONG).show()
+                else if (selectID==-1) Toast.makeText(this@ReservationActivity , "Select a payment method",Toast.LENGTH_LONG).show()
                 else {
                     val isVegan = findViewById<CheckBox>(R.id.isVegan)
                     val selectBox = isVegan.isChecked
@@ -103,13 +108,17 @@ class ReservationActivity : AppCompatActivity() {
                     if (selectBox) vegan = "is a vegan guest"
                     else vegan = "is not a vegan guest"
 
-                    builder.setTitle("Great!")
+
+                    //prints the user a message with the reservation details
+                    builder.setTitle("Great! ${name.text}")
                         .setMessage(
                             "These are the reservation details :\n" +
 
-                                    " A table for $numOfPeople in ${showDate.text}\n" +
+                                    "A table for $numOfPeople in ${showDate.text}\n" +
                                     "The payment method is : ${btn.text} \n" +
-                                    "and there $vegan"
+                                    "and there $vegan.\n" +
+                                    "Your phone number is: ${phone.text}\n" +
+                                    "See you!"
 
                         )
 

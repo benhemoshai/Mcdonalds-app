@@ -46,12 +46,12 @@
 
             <TextView
                 android:id="@+id/friesInfo"
-                android:layout_width="309dp"
-                android:layout_height="136dp"
+                android:layout_width="330dp"
+                android:layout_height="150dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/baloo"
-                android:text="Taste our soft potatoes\n 200 cal\n Price: 3$"
-                android:textSize="18sp"
+                android:text="230 cal\n Price: 3$ \n\n McDonald's World Famous Fries® are made with premium potatoes. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside."
+                android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/friesPic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.514"

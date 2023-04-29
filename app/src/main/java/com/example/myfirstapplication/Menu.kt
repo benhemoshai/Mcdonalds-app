@@ -14,7 +14,6 @@ private lateinit var icecream: ImageButton
 private lateinit var water: ImageButton
 private lateinit var mcnuggets: ImageButton
 
-
 class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +39,7 @@ class Menu : AppCompatActivity() {
                 builder.dismiss()
             }
             builder.show()
+
         }
     }
 

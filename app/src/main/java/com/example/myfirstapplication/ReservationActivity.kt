@@ -6,7 +6,6 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Phone
 import android.widget.*
 import java.util.*
 
@@ -24,10 +23,10 @@ class ReservationActivity : AppCompatActivity() {
         setPeopleAmount()
         submit()
     }
-
+    //This function opens android's Date and Time dialog which the user can choose.
     private fun setDateAndTime() {
-        //date&time pickers - initializes the year,month,day and the time
         showDate = findViewById(R.id.show_date2)
+        //date&time pickers - initializes the year,month,day and the time
         val datetimePicker =
             DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
                 val timePicker = TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
@@ -64,15 +63,17 @@ class ReservationActivity : AppCompatActivity() {
             DatePickerDialog(this, datetimePicker, year, month, day).show()
         }
     }
+    //This function handles the changes of the amount of people.
+    //The user can click '+' or '-' buttons in order to choose the amount.
     private fun setPeopleAmount(){
-        //changes the amount of people
         val plusButton = findViewById<Button>(R.id.button2)
         val people = findViewById<TextView>(R.id.people)
+        val minusButton = findViewById<Button>(R.id.button4)
+
         plusButton.setOnClickListener {
             numOfPeople++
             people.text = numOfPeople.toString()
         }
-        val minusButton = findViewById<Button>(R.id.button4)
         minusButton.setOnClickListener {
             if (numOfPeople > 0) {
                 numOfPeople--
@@ -81,6 +82,10 @@ class ReservationActivity : AppCompatActivity() {
         }
     }
 
+    //This function handles the submit button pressing.
+    //When the user clicks on "submit", the function checks if he filled the required fields,
+    //sends a Toast Message if he didn't and finally sends a confirmation message with
+    //the details of the reservation.
     private fun submit(){
             //payment method radioButtons
             val payment = findViewById<RadioGroup>(R.id.radioGroup)
@@ -88,7 +93,6 @@ class ReservationActivity : AppCompatActivity() {
             builder = AlertDialog.Builder(this)
 
             submitButton.setOnClickListener {
-
                 val selectID = payment.checkedRadioButtonId
                 val btn = findViewById<RadioButton>(selectID)
                 name = findViewById(R.id.editName)
@@ -99,6 +103,7 @@ class ReservationActivity : AppCompatActivity() {
                 else if (name.text.toString()== "") Toast.makeText(this@ReservationActivity , "Enter your name",Toast.LENGTH_LONG).show()
                 else if(phone.text.toString().length!=10) Toast.makeText(this@ReservationActivity , "Enter a valid phone number",Toast.LENGTH_LONG).show()
                 else if (numOfPeople==0) Toast.makeText(this@ReservationActivity , "Select the amount of people",Toast.LENGTH_LONG).show()
+                //if selectID == -1, it means that the user didn't pick a payment method
                 else if (selectID==-1) Toast.makeText(this@ReservationActivity , "Select a payment method",Toast.LENGTH_LONG).show()
                 else {
                     val isVegan = findViewById<CheckBox>(R.id.isVegan)

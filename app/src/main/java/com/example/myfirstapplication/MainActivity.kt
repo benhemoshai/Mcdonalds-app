@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-
-
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,9 +21,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,Menu::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-
-
         }
+
         //when the user clicks on the "reserve seats" button
             reservation_button.setOnClickListener{
             val intent = Intent(this,ReservationActivity::class.java)

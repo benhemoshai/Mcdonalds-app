@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
         //when the user clicks on the "menu" button
         menu_button.setOnClickListener{
-          //  animatorSet.start()
             val intent = Intent(this,Menu::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)

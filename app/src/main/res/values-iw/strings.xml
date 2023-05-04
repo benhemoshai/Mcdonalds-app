@@ -5,4 +5,6 @@
     <string name="menu_button">תפריט</string>
     <string name="reserve_button">הזמנת מקום</string>
     <string name="checkourmenu">תראו את התפריט החדש שלנו!</string>
+    <string name="bigmac">ביג מק</string>
+
 </resources>

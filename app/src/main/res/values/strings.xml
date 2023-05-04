@@ -4,4 +4,6 @@
     <string name="menu_button">Menu</string>
     <string name="reserve_button">Reserve Seats</string>
     <string name="checkourmenu">Check out our new menu!</string>
+    <string name="bigmac">Big Mac</string>
+
 </resources>

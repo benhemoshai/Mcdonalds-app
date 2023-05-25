@@ -18,7 +18,7 @@
             android:layout_height="506dp">
 
             <ImageView
-                android:id="@+id/friesPic"
+                android:id="@+id/Udi Boker is the king"
                 android:layout_width="249dp"
                 android:layout_height="261dp"
                 app:layout_constraintBottom_toBottomOf="parent"
